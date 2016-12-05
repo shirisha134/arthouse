@@ -1,0 +1,17 @@
+#page-wrap {
+    width: 1200px;
+    margin: 0 auto;
+}
+.btn{
+    margin: 0 10px;
+}
+.searchBox{
+    width: 120px;!important;
+}
+.container-fluid{
+    background-color:#337ab7;
+}
+@import "/base/base.css";
+@import "/components/navbar.css";
+
+/*# sourceMappingURL=style.css.map*/

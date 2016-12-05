@@ -150,6 +150,125 @@ var __makeRelativeRequire = function(require, mappings, pref) {
   }
 };
 require.register("components/app.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _navbar = require('./navbar/navbar');
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import DashBoard from './dashBoard/dashboard';
+
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
+
+    function App() {
+        _classCallCheck(this, App);
+
+        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    }
+
+    _createClass(App, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(_navbar2.default, null)
+            );
+        }
+    }]);
+
+    return App;
+}(_react2.default.Component);
+
+exports.default = App;
+});
+
+;require.register("components/dashBoard/dashboard.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSlick = require('react-slick');
+
+var _reactSlick2 = _interopRequireDefault(_reactSlick);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var images = ["../../assets/images/300.jpg", "../../assets/images/300(1).jpg"];
+
+var Dashboard = function (_React$Component) {
+    _inherits(Dashboard, _React$Component);
+
+    function Dashboard() {
+        _classCallCheck(this, Dashboard);
+
+        return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).apply(this, arguments));
+    }
+
+    _createClass(Dashboard, [{
+        key: 'render',
+        value: function render() {
+            var settings = {
+                dots: false,
+                autoplay: true,
+                speed: 300,
+                arrows: true
+            };
+            var urls = images.map(function (imgUrl, key) {
+                return _react2.default.createElement(
+                    'div',
+                    { key: key },
+                    _react2.default.createElement('img', { src: imgUrl, style: { width: "1200px" } })
+                );
+            });
+            return _react2.default.createElement(
+                _reactSlick2.default,
+                settings,
+                urls
+            );
+        }
+    }]);
+
+    return Dashboard;
+}(_react2.default.Component);
+
+exports.default = Dashboard;
+});
+
+;require.register("components/navbar/navBarItem.js", function(exports, require, module) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -170,30 +289,117 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+var NavBarItem = function (_React$Component) {
+    _inherits(NavBarItem, _React$Component);
 
-    function App() {
-        _classCallCheck(this, App);
+    function NavBarItem() {
+        _classCallCheck(this, NavBarItem);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (NavBarItem.__proto__ || Object.getPrototypeOf(NavBarItem)).apply(this, arguments));
     }
 
-    _createClass(App, [{
+    _createClass(NavBarItem, [{
         key: "render",
         value: function render() {
             return _react2.default.createElement(
-                "a",
-                { href: "https://www.google.co.in" },
-                " hyperlink"
+                "button",
+                { type: "button", className: "btn btn-default navbar-btn" },
+                this.props.item,
+                _react2.default.createElement("a", { href: "https://www.google.co.in", className: "navbar-link" })
             );
         }
     }]);
 
-    return App;
+    return NavBarItem;
 }(_react2.default.Component);
 
-exports.default = App;
+exports.default = NavBarItem;
+});
+
+;require.register("components/navbar/navbar.js", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _navBarItem = require('./navBarItem');
+
+var _navBarItem2 = _interopRequireDefault(_navBarItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var navBarItems = [{
+    link: "www.google.com",
+    text: "Home"
+}, {
+    link: "https://drive.google.com/drive/folders/0B-OUv9GuiBbxcFBvMTJQR2pUQ3M",
+    text: "SighUp"
+}, {
+    link: "https://thoughtworks.jiveon.com/groups/coes",
+    text: "SighIn"
+}];
+
+var NavBar = function (_React$Component) {
+    _inherits(NavBar, _React$Component);
+
+    function NavBar() {
+        _classCallCheck(this, NavBar);
+
+        return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
+    }
+
+    _createClass(NavBar, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'nav',
+                { className: 'navbar navbar-default' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container-fluid' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'navbar-header' },
+                        navBarItems.map(function (eachItem) {
+                            return _react2.default.createElement(_navBarItem2.default, { item: eachItem.text, link: eachItem.link });
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'form',
+                        { className: 'navbar-form navbar-right', role: 'search' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'form-group' },
+                            _react2.default.createElement('input', { type: 'text', className: 'form-control', placeholder: 'Search' })
+                        ),
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'submit', className: 'btn btn-default' },
+                            'Search'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return NavBar;
+}(_react2.default.Component);
+
+exports.default = NavBar;
 });
 
 ;require.register("initialize.js", function(exports, require, module) {
@@ -207,18 +413,27 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _app = require('components/app');
+var _app = require('./components/app');
 
 var _app2 = _interopRequireDefault(_app);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 document.addEventListener('DOMContentLoaded', function () {
-    _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.querySelector('#app'));
+    _reactDom2.default.render(_react2.default.createElement(_app2.default, null), document.getElementById('app'));
 });
 });
 
-require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");process = require('process');require.register("___globals___", function(exports, require, module) {
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/duplex.js", "_stream_duplex");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/passthrough.js", "_stream_passthrough");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/readable.js", "_stream_readable");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/transform.js", "_stream_transform");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/writable.js", "_stream_writable");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/buffer/index.js", "buffer");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/events/events.js", "events");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/process/browser.js", "process");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/stream-browserify/index.js", "stream");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/string_decoder/index.js", "string_decoder");process = require('process');require.register("___globals___", function(exports, require, module) {
   
 });})();require('___globals___');
 
