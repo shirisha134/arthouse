@@ -13,6 +13,5 @@ describe('Components.App', () => {
         const wrapper=shallow(<App />);
         expect(wrapper.type()).to.equal('div');
         expect(wrapper.containsAllMatchingElements([<NavBar />])).to.equal(true);
-        // expect(wrapper.find(<NavBar />)).to.be.length(1);
     });
 });

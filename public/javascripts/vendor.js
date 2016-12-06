@@ -72502,16 +72502,47 @@ describe('Components.App', function () {
         var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_app2.default, null));
         (0, _chai.expect)(wrapper.type()).to.equal('div');
         (0, _chai.expect)(wrapper.containsAllMatchingElements([_react2.default.createElement(_navbar2.default, null)])).to.equal(true);
-        // expect(wrapper.find(<NavBar />)).to.be.length(1);
     });
 });
 });
 
 require.register("test/components.navBar.spec.js", function(exports, require, module) {
-"use strict";
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _chai = require('chai');
+
+var _enzyme = require('enzyme');
+
+var _navbar = require('../app/components/navbar/navbar');
+
+var _navbar2 = _interopRequireDefault(_navbar);
+
+var _navBarItem = require('../app/components/navbar/navBarItem');
+
+var _navBarItem2 = _interopRequireDefault(_navBarItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+describe('component.Navbar', function () {
+
+    it('should be visible', function () {
+        var wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_navbar2.default, null));
+        (0, _chai.expect)(wrapper.type()).to.equal('nav');
+        (0, _chai.expect)(wrapper.find('.navbar')).to.have.length(1);
+        (0, _chai.expect)(wrapper.find('.container-fluid')).to.have.length(1);
+        (0, _chai.expect)(wrapper.find('.navbar-header')).to.have.length(1);
+        (0, _chai.expect)(wrapper.find('.btn')).to.have.length(1);
+        (0, _chai.expect)(wrapper.find('.navBarItem')).to.have.length(1);
+        {/*expect(wrapper.contains(<button className="btn" />)).to.equal(true);*/}
+    });
+});
 });
 
-;require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/duplex.js", "_stream_duplex");
+require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/duplex.js", "_stream_duplex");
 require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/passthrough.js", "_stream_passthrough");
 require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/readable.js", "_stream_readable");
 require.alias("brunch/node_modules/deppack/node_modules/node-browser-modules/node_modules/readable-stream/transform.js", "_stream_transform");

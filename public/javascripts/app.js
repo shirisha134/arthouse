@@ -166,6 +166,10 @@ var _navbar = require('./navbar/navbar');
 
 var _navbar2 = _interopRequireDefault(_navbar);
 
+var _dashboard = require('./dashBoard/dashboard');
+
+var _dashboard2 = _interopRequireDefault(_dashboard);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -173,8 +177,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import DashBoard from './dashBoard/dashboard';
 
 var App = function (_React$Component) {
     _inherits(App, _React$Component);
@@ -191,7 +193,8 @@ var App = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_navbar2.default, null)
+                _react2.default.createElement(_navbar2.default, null),
+                _react2.default.createElement(_dashboard2.default, null)
             );
         }
     }]);
@@ -221,13 +224,15 @@ var _reactSlick2 = _interopRequireDefault(_reactSlick);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var images = ["../../assets/images/300.jpg", "../../assets/images/300(1).jpg"];
+var images = ["../images/1.jpeg", "../images/2.jpeg", "../images/3.jpeg"];
 
 var Dashboard = function (_React$Component) {
     _inherits(Dashboard, _React$Component);
@@ -241,17 +246,17 @@ var Dashboard = function (_React$Component) {
     _createClass(Dashboard, [{
         key: 'render',
         value: function render() {
-            var settings = {
+            var settings = _defineProperty({
                 dots: false,
                 autoplay: true,
                 speed: 300,
                 arrows: true
-            };
+            }, 'dots', true);
             var urls = images.map(function (imgUrl, key) {
                 return _react2.default.createElement(
                     'div',
                     { key: key },
-                    _react2.default.createElement('img', { src: imgUrl, style: { width: "1200px" } })
+                    _react2.default.createElement('img', { src: imgUrl, style: { width: "1200px", height: "300px" } })
                 );
             });
             return _react2.default.createElement(
@@ -303,7 +308,7 @@ var NavBarItem = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "button",
-                { type: "button", className: "btn btn-default navbar-btn" },
+                { type: "button", className: " navBarItem btn btn-default navbar-btn" },
                 this.props.item,
                 _react2.default.createElement("a", { href: "https://www.google.co.in", className: "navbar-link" })
             );
@@ -342,12 +347,15 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var navBarItems = [{
+    id: 1,
     link: "www.google.com",
     text: "Home"
 }, {
+    id: 2,
     link: "https://drive.google.com/drive/folders/0B-OUv9GuiBbxcFBvMTJQR2pUQ3M",
     text: "SighUp"
 }, {
+    id: 3,
     link: "https://thoughtworks.jiveon.com/groups/coes",
     text: "SighIn"
 }];
@@ -374,7 +382,7 @@ var NavBar = function (_React$Component) {
                         'div',
                         { className: 'navbar-header' },
                         navBarItems.map(function (eachItem) {
-                            return _react2.default.createElement(_navBarItem2.default, { item: eachItem.text, link: eachItem.link });
+                            return _react2.default.createElement(_navBarItem2.default, { id: eachItem.id, item: eachItem.text, link: eachItem.link });
                         })
                     ),
                     _react2.default.createElement(
